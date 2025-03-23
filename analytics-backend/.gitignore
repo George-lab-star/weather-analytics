@@ -1,0 +1,3 @@
+#.env was not added for demonstration purposes.
+.venv
+pyrightconfig.json
