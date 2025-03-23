@@ -11,7 +11,7 @@
 
 1. Склонируйте репозиторий:
 
-&ensp;**git clone** 
+&ensp;**git clone https://github.com/George-lab-star/weather-analytics.git** 
 
 2. Перейдите в папку проекта:
     
