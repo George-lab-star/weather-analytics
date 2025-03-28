@@ -26,7 +26,20 @@ services:
       - "3000:3000"
     depends_on:
       - backend
-
+  tg_bot:
+    build:
+      context: ./analytics-bot
+    volumes:
+      - ./analytics-bot:/app
+    ports:
+      - "5000:8000"
+    depends_on:
+      - serveo
+  serveo:
+    build:
+      context: ./serveo
+    depends_on:
+      - frontend
 volumes:
   pgdata:
     driver: local

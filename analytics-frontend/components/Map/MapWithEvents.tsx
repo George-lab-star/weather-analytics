@@ -9,13 +9,6 @@ import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import L from "leaflet";
 import axios from "axios";
 
-// Set icons for marker
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: markerIcon2x,
-  iconUrl: markerIcon,
-  shadowUrl: markerShadow,
-});
-
 // Interface for marker
 interface MapProps {
   marker: [lat: number, lng: number] | null;
@@ -37,6 +30,14 @@ const MapWithEvents: React.FC<MapProps> = ({
     showMarker: false,
   });
 
+  // Set icons for marker
+  useEffect(() => {
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: "leaflet/dist/images/marker-icon-2x.png",
+      iconUrl: "leaflet/dist/images/marker-icon.png",
+      shadowUrl: "leaflet/dist/images/marker-shadow.png",
+    });
+  }, []);
   // Flag for recuperation of addendum handlers
   const isHandlersAdded = useRef(false);
 
